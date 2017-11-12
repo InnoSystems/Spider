@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+{% if shopping %}
+    <ul>
+    	<li>Datum: {{ shopping.shop_date  }}, Kosten: {{ shopping.sum  }}, Laden: {{ shopping.store_name }} </li>
+    	<ul>
+		{% for article in shopping.article_set.all %}
+		    <li>{{ article.name }}</li>
+		{% endfor %}
+		</ul>
+    </ul>
+{% else %}
+    <p>No shopping is available.</p>
+{% endif %}
+</body>
+</html>

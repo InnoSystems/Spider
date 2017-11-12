@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>{{ shopping.store_name }}</h1>
+
+	<ul>
+	{% for shopping in shopping.article_set.all %}
+	    <li>{{ shopping.store_name }} -- {{ shopping.store_name }} vote{{ shopping.store_name }}</li>
+	{% endfor %}
+	</ul>
+	
+	<a href="{% url 'spend:vote' shopping.id %}">Vote again?</a>
+</body>
+</html>

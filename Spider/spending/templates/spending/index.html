@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+{% if latest_shopping_list %}
+    <ul>
+    {% for shopping in latest_shopping_list %}
+        <li><a href="{% url 'spend:detail' shopping.id %}">{{ shopping.shop_date }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No shopping are available.</p>
+{% endif %}
+</body>
+</html>
