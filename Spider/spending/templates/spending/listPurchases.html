@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	crossorigin="anonymous">
+</head>
+<body>
+	{% if latest_shopping_list %}
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Datum</th>
+				<th scope="col">Geschaeft</th>
+				<th scope="col">Bezahlt</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for shopping in latest_shopping_list %}
+			<tr onclick="window.location.href = '{% url 'spend:detail' shopping.id %}';">
+				<th scope="row">{{ forloop.counter }}</th>
+				<td>{{ shopping.shop_date }}</td>
+				<td>{{ shopping.store_name }}</td>
+				<td>{{ shopping.sum }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{% else %}
+	<p>No spending are available.</p>
+	{% endif %}
+</body>
+</html>

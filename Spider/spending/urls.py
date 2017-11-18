@@ -11,7 +11,7 @@ from . import views
 app_name = 'spend'
 urlpatterns = [
     # ex: /spending/
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.listPurchases, name='index'),
     # ex: /spending/3/  
     url(r'^(?P<shopping_id>[0-9]+)/$', views.getShoppingById, name='detail'),
     # ex: /spending/5/results/

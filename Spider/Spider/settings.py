@@ -25,7 +25,7 @@ SECRET_KEY = '^y%)zedqhh8k1%rsb)s6qfp@m_q8+82=1mwpamr@kai@*w1%j8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['185.162.250.98']
+ALLOWED_HOSTS = ['localhost', '185.162.250.98']
 
 
 # Application definition
@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Berlin'
 
 USE_I18N = True
 

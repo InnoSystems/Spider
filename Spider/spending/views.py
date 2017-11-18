@@ -14,6 +14,15 @@ def index(request):
     }
     return HttpResponse(template.render(context, request))
 
+def listPurchases(request):
+    latest_shopping_list = Shopping.objects.order_by('-shop_date')[:50]
+    template = loader.get_template('spending/listPurchases.html')
+    context = {
+        'latest_shopping_list': latest_shopping_list,
+    }
+    return HttpResponse(template.render(context, request))
+
+
 def getShoppingById(request, shopping_id):
     try:
         shopping = Shopping.objects.get(pk=shopping_id)
