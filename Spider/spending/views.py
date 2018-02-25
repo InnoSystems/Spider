@@ -7,7 +7,7 @@ from django.urls.base import reverse
 # Create your views here.
 
 def index(request):
-    latest_shopping_list = Shopping.objects.order_by('-shop_date')[:50]
+    latest_shopping_list = Shopping.objects.order_by('-shop_date')[:51]
     template = loader.get_template('spending/index.html')
     context = {
         'latest_shopping_list': latest_shopping_list,
